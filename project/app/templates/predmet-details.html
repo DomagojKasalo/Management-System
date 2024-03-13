@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block admin %}
+<div class="p-3 text-left bg-light">
+  <h2>{{ predmet.name }}</h2>
+  <p>Kod: {{ predmet.kod }}</p>
+  <p>Program: {{ predmet.program }}</p>
+  <p>Ects: {{ predmet.ects }}</p>
+  <p>Nositelj: {{ predmet.nositelj }}</p>
+</div>
+{% endblock %}

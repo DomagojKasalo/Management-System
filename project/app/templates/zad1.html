@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>zad1</h2>
+  <ul>
+    {% for subject in subjects %}
+        <p><strong>{{ subject.name }}</strong> predmet polozilo {{ subject.polozeni }} studenata; redovnih {{ subject.polozeni_redovni }} izvanrednih {{ subject.polozeni_izvanredni }}</p>
+        <a href="{% url 'vidi-detalje' subject.id %}">Vidi detalje</a>
+    {% endfor %}
+  </ul>
+
+{% endblock %}

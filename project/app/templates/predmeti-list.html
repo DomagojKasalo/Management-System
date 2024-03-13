@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block student %}
+<div class="p-5 text-center bg-light">
+  <h1 class="mb-3">Lista neupisanih/nepoloženih predmeta:</h1>
+</div>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Naziv predmeta</th>
+      <th scope="col">Semestar</th>
+      <th scope="col">Dodaj</th>
+    </tr>
+  </thead>
+  {% for semester, predmeti in semesters.items %}
+  {% for predmet in predmeti %}
+    <tr>
+      <th>{{ predmet.name }}</th>
+      <th>Semestar {{ semester }}</th>
+      <th><form action="{% url 'add_predmet' predmet.id %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Dodaj" class="btn btn-primary">
+      </form></th>
+    </tr>
+  {% empty %}
+  <tr>
+    <th>Nema pronađenih predmeta.</th>
+  </tr>
+  {% endfor %}
+  {% endfor %}
+</table>
+  
+{% endblock %}

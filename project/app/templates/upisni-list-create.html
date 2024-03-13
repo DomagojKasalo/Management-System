@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block admin %}
+<div class="p-3 text-left bg-light">
+<h2>Kreirajte novi Upisni list</h2>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-primary">Dodaj</button>
+</form>
+
+</div>
+{% endblock %}

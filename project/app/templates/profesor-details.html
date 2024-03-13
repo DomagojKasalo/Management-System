@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block admin %}
+<div class="p-3 text-left bg-light">
+    <h1>Detalji o profesoru</h1>
+    <h4>Username: {{ profesor.username }}</h4>
+    <p>Ime: {{ profesor.first_name }}</p>
+</div>
+
+{% endblock %}

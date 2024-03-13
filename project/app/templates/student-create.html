@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block admin %}
+<div class="p-3 text-left bg-light">
+  <h3 class="mb-2">Kreiraj novog studenta</h3>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-primary">Dodaj Studenta</button>
+</form>
+</div>
+{% endblock %}

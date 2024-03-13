@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block profesor %}
+<div class="p-5 text-left bg-light">
+  <h1 class="mb-3">Lista studenata:</h1>
+
+{% if students %}
+    {% for student in students %}
+    <h3 class="mb-3">{{ student.username }}</h3>
+    
+    <a class="btn btn-primary" href="{% url 'status-edit' predmet_id student.id %}" role="button">Edit Status</a>
+    {% endfor %}
+{% else %}
+  <p>Nema upisanih studenata.</p>
+</div>
+{% endif %}
+{% endblock %}

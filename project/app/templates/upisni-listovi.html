@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block admin %}
+
+<div class="p-3 text-left bg-light">
+  <h2>Lista Upisnih listova</h2>
+  <a href="{% url 'upisni-list-create' %}" class="btn btn-primary mb-2">Dodaj novi Upisni list</a>
+</div>
+{% for upis in upisni %}
+  <ul class="list-group">
+    <li class="list-group-item">
+      <h3>{{ upis.predmet_id.name }} {{ upis.student_id.username }} {{ upis.status }}</h3>
+      <div class="p-1 text-right bg-light">
+        <a href="{% url 'upisni-list-edit' upis.id %}" class="btn btn-dark"> Edit </a>
+      </div>
+  </li>
+  </ul>
+{% empty %}
+  <p>Upisni listovi nisu pronađeni.</p>
+{% endfor %}
+{% endblock %}

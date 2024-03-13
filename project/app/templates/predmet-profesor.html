@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block profesor %}
+<div class="p-5 text-center bg-light">
+    <h1 class="mb-3">Lista predmeta:</h1>
+</div>
+<ul>
+    {% for predmet in predmeti %}
+    <h3 class="mb-3">* {{ predmet.name }}</h3>
+    <li>
+        <a class="btn btn-primary" href="{% url 'popis-studenata' predmet.id %}" role="button">Popis studenata</a>
+        <a class="btn btn-primary" href="{% url 'izgubio-potpis' predmet.id %}" role="button">Potpis izgubljen</a>
+        <a class="btn btn-primary" href="{% url 'upisan' predmet.id %}" role="button">Popis upisanih</a>
+        <a class="btn btn-primary" href="{% url 'polozen' predmet.id %}" role="button">Popis polozenih</a>
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}

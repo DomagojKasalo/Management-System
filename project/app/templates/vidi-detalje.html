@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Zad2</h2>
+  <ul>
+    <p>Predmet <strong>{{ subject.name }}</strong> položili su:</p>
+    <h5>Redovni studenti:</h5>
+    <p>{{  subject.polozeni_redovni }}</p>
+
+    <h5>Izvanredni studenti:</h5>
+    <p>{{  subject.polozeni_izvanredni }}</p>
+  </ul>
+
+{% endblock %}

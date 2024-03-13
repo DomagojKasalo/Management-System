@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block student %}
+<div class="p-5 text-left bg-light">
+  <a href="{% url 'predmeti-list' %}" class="btn btn-primary">Dodaj predmet</a><br>
+</div>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Naziv predmeta: </th>
+      <th scope="col">Status: </th>
+      <th scope="col">Izbriši: </th>
+    </tr>
+  </thead>
+{% for upis in upisi %}
+<tr>
+  <th>{{ upis.predmet_id.name }}</th>
+  <th>{{ upis.status }}</th>
+  <th>
+    <form action="{% url 'upisi_delete' upis.id %}" method="post">
+      {% csrf_token %}
+      <input type="submit" value="Delete" class="btn btn-danger">
+    </form>
+</th>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

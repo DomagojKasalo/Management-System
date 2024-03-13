@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block admin %}
+  <div class="p-5 text-center bg-light">
+    <h1 class="mb-3">Hello {{ user.username }}</h1>
+  </div>
+  <div class="p-5 text-left bg-light">
+      <a href="{% url 'predmeti' %}" class="btn btn-primary">Svi predmeti</a>
+      <a href="{% url 'studenti' %}" class="btn btn-primary">Svi studenti</a>
+      <a href="{% url 'profesori' %}" class="btn btn-primary">Svi profesori</a>
+      <a href="{% url 'upisni-listovi' %}" class="btn btn-primary">Upisni listovi</a>
+  </div>
+{% endblock %}

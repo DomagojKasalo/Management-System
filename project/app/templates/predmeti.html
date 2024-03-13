@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block admin %}
+<div class="p-3 text-left bg-light">
+  <h1 class="mb-3">Lista predmeta</h1>
+  <a href="{% url 'predmet-create' %}" class="btn btn-primary mb-2">Dodaj novi Predmet</a>
+</div>
+{% for predmet in predmeti %}
+    <ul class="list-group">
+      <li class="list-group-item"><h3>{{ predmet.name }}</h3>
+        <div class="p-1 text-right bg-light">
+          <a href="{% url 'predmet-detail' predmet.id %}" class="btn btn-dark"> Details </a>
+          <a href="{% url 'predmet-edit' predmet.id %}" class="btn btn-dark"> Assign </a>
+          <a href="{% url 'studenti-popis' predmet.id %}" class="btn btn-dark"> Popis studenata </a>
+        </div>
+    </li>
+    </ul>
+{% empty %}
+  <p>Predmet nije pronađen.</p>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,48 @@
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <title>Django Project</title>
+</head>
+<body>
+    <div class="container text-center">
+        <ul class="nav bg-info">
+            <li class="nav-item">
+              <a class="nav-link link-light" href="/home">HOME</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link link-light" href="/logout">Logout</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+                <a class="nav-link link-light" href="/login">Login</a>
+            </li>
+            {% endif %}
+          </ul>
+    </div>
+
+    <div>
+        {% block login %}
+        {% endblock %}
+        {% if user.uloge.uloga == 'admin' %}
+        {% block admin %}
+        {% endblock %}
+        {% endif %}
+        {% if user.uloge.uloga == 'profesor' %}
+        {% block profesor %}
+        {% endblock %}
+        {% endif %}
+        {% if user.uloge.uloga == 'student' %}
+        {% block student %}
+        {% endblock %}
+        {% endif %}
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>

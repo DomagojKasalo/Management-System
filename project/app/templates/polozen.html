@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block profesor %}
+<div class="p-3 text-left bg-light">
+  <h1 class="mb-3">Popis studenata koji su položili predmet:</h1>
+
+{% if students %}
+    {% for student in students %}
+      <h3 class="mb-3">{{ student.username }}</h3>
+    {% endfor %}
+{% else %}
+  <h6 class="mb-3">Studenti nisu pronađeni.</h6>
+</div>
+{% endif %}
+{% endblock %}

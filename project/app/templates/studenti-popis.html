@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block admin %}
+<div class="p-5 text-left bg-light">
+  <h1 class="mb-3">Lista studenata:</h1>
+
+{% if students %}
+    {% for student in students %}
+    <h3 class="mb-3">{{ student.username }}</h3>
+    
+    {% endfor %}
+{% else %}
+  <p>Nema upisanih studenata.</p>
+</div>
+{% endif %}
+{% endblock %}
