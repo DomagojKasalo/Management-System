@@ -7,8 +7,9 @@ and manage student enrollment statuses with options such as enroll, disenroll, a
 ## Features
 **Course Management:** Browse and edit course details.
 **Student Enrollment:** Enroll students in courses, disenroll, or mark courses as passed from a mentor's perspective.
-**User Interface**
-The user interface is straightforward, prioritizing functionality over aesthetics. It includes basic navigation options to access different features of the system:
+**User Interface** 
+The user interface is straightforward, prioritizing functionality over aesthetics. 
+It includes basic navigation options to access different features of the system:
 * View of courses (for mentors).
 * Enrollment management interface for individual students, with buttons to modify enrollment status.
 
@@ -16,7 +17,7 @@ The user interface is straightforward, prioritizing functionality over aesthetic
 * Frontend/UI: Basic HTML/CSS
 * Backend: Python Django
 * Database: SQLite
-* 
+  
 ## Project Status
 This project is in its initial stages, with a focus on core functionalities.
 The codebase and UI design are kept simple to meet the educational objectives of the assignment.
